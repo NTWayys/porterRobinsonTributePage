@@ -1,0 +1,276 @@
+:root{
+  --beamPink:#e7bff2;
+  --pink:#b022cb;
+  --purple:#350a4d;
+  --waterBlue:#291cd0;
+  --darkBlue:#0d0b4c;
+  --iceBlue:#3f51e2;
+  --iceWhite:#dfe7f8;
+
+  /* color scheme was chosen based on scene from shelter at https://youtu.be/fzQ6gRAEoy0?t=174 */
+}
+#root{
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--iceWhite);
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2{
+  margin:0;
+}
+
+h2{
+  margin-bottom: -0.5rem;
+}
+h4{
+  font-size: 1.2rem;
+  margin:0 0 0.5rem
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color:var(--pink);
+}
+a:hover{
+  color:var(--iceBlue)
+}
+
+.card a:hover,
+.card a:focus{
+  color:var(--iceBlue)
+}
+
+
+.App-header{
+  background-image: url(./images/6538209.png);
+  min-height: 1rem;
+  
+
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position-y:55%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width >400px){
+  .App-header{
+    min-height:10rem;
+  }
+}
+@media (width >700px){
+  .App-header{
+    min-height:20rem;
+  }
+}
+
+.targetName{
+  color: var(--darkBlue);
+  opacity: 0.8;
+  text-shadow: 0 0 5px var(--iceBlue), 0 0 10px var(--pink);
+  font-size: 4rem;
+
+  font-weight: 900;
+}
+
+.container{
+  margin:0 auto 0;
+  max-width: 1200px;
+  padding: 50px 50px 0;
+}
+
+/* About section styling*/
+
+.about{
+  
+  display: flex;
+  flex-direction: column;
+}
+.about img{
+  order:1;
+  align-self: center;
+  max-width: 100%;
+}
+.about p,
+.about img{
+  display: inline;
+}
+
+
+@media (width > 920px) {
+  .about{
+    display:block;
+  }
+  .about img{
+    top:0;
+    float: right;
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+}
+
+@media (width > 1100px) {
+  .about{
+    display:block;
+  }
+  .about img{
+    order: 1;
+  }
+}
+
+
+.aboutInfo{
+  max-width: 800px;
+}
+
+.profilePic{
+  max-height:400px;
+  max-width:400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+
+
+/* Discography styling */
+
+/* cards styling */
+
+.card{
+  padding:2rem;
+  margin: 0 -1.5rem;
+  flex-wrap: wrap;
+  display: flex;
+  position: relative;
+
+  border:2px solid var(--purple); 
+  border-radius: 30px;
+
+  background:var(--darkBlue);
+  color:var(--beamPink);
+  box-shadow: 1rem 0 3rem rgb(30, 4, 51) ;
+
+  transition: 0.3s;
+}
+
+.card img{
+  width: 100%;
+  transition: 0.15s;
+  border-radius: 10px;
+}
+
+.card img:hover{
+  transform: scale(1.1);
+}
+
+.card:nth-of-type(1){
+  z-index: 6;
+}
+.card:nth-of-type(2){
+  z-index: 5;
+}
+.card:nth-of-type(2){
+  z-index: 4;
+}
+.card:nth-of-type(3){
+  z-index: 3;
+}
+.card:nth-of-type(4){
+  z-index: 2;
+}
+.card:nth-of-type(5){
+  z-index: 1;
+}
+.card:nth-of-type(6){
+  z-index: 0;
+}
+.card:nth-of-type(1):hover,
+.card:nth-of-type(2):hover,
+.card:nth-of-type(3):hover,
+.card:nth-of-type(4):hover,
+.card:nth-of-type(5):hover,
+.card:nth-of-type(6):hover{
+z-index: 20;
+}
+
+@media (width > 300px){
+  .cardCaro{
+    margin: 50px 0 ;
+    display: grid;
+    grid-template-columns:1fr;
+  }
+  .card{
+    max-width: 500px;
+    margin: -5px auto;
+  }
+
+  .card:hover,.card:focus-within{
+    transform: translateY(-0.75rem);
+  }
+  .card:hover,.card:focus-within{
+    transform: translateY(-0.75rem);
+  }
+}
+@media (width > 580px){
+  .cardCaro{
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (width > 880px){
+  .cardCaro{
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+  }
+  .card{
+    max-width: 500px;
+    margin: -10px auto;
+  }
+
+}
+@media (width > 1100px) {
+  .card{
+    width: 200px;
+    margin: 0 -1.5rem;
+  }
+  
+  .cardCaro{
+    display:flex;
+    justify-content: flex-end;
+    padding:2rem 0;
+    border-radius: 20px;
+  }
+  
+  .card:hover,.card:focus-within{
+    transform: translateY(-0.75rem) translateX(0.75rem);
+  }
+  .card:hover ~ .card,
+  .card:focus-within ~ .card{
+    transform:translateX(2rem)
+  }
+}
+
+/* Footer styling */
+
+.footer{
+  margin:0;
+  background:var(--darkBlue);
+  color:var(--beamPink);
+
+  display:flex;
+  justify-content: center;
+
+  bottom: 0;
+
+  padding:20px 0;
+  width:100vw
+}
